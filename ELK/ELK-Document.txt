@@ -1,0 +1,41 @@
+#Bitnami ELK Launch
+
+#Installation
+https://bitnami.com/redirect/to/675549/bitnami-elk-7.3.1-0-linux-x64-installer.run
+
+
+# HELP
+# https://docs.bitnami.com/aws/apps/elk/
+
+
+
+# Changing the bitnami password
+https://docs.bitnami.com/oci/apps/elk/configuration/change-default-password/
+
+sudo /opt/bitnami/apache2/bin/htpasswd -c /opt/bitnami/elasticsearch/apache-conf/password user
+
+Restart the Apache server:
+
+sudo /opt/bitnami/ctlscript.sh restart apache
+
+
+#https://docs.bitnami.com/aws/how-to/bitnami-remove-banner/
+
+# Start Stop Status 
+################################################
+/opt/elk-7.3.1-0/ctlscript.sh status
+/opt/elk-7.3.1-0/ctlscript.sh restart
+#################################################
+cd /opt/elk-7.3.1-0
+
+./use_elk
+
+
+./ctlscript.sh start kibana
+./ctlscript.sh start elasticsearch
+./ctlscript.sh start logstash
+
+
+########################################################################################################
+
+
